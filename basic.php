@@ -152,6 +152,84 @@ $noIWant = 4;
 // }
 
 
+$new_users = [
+    
+    [
+        'username'=>'alex',
+        'likes'=>[ ['cats'=>4],['dogs'=>2]  ]
+    ],
+    
+    [
+        'username'=>'ajay',
+        // 'email_id'=>'qwe@gmail.com',
+        'likes'=>[
+            ['cats'=>4]
+            ,['dogs'=>2]
+            ]
+        
+        ],
+    ];
+
+$target = 2;
+$value = null;
+
+foreach($new_users as $new_user){
+    
+    foreach($new_user['likes'] as $likes){
+        
+        foreach($likes as $one_item){
+            
+            if ($one_item === $target){
+            
+            $value = $likes;
+            break 2;
+            
+        }
+        
+       
+            
+        }
+            
+            
+    }
+    
+    // var_dump($value);
+}
+
+
+
+// FUNCTION IMPLEMENTATION
+
+function firtsName($f_name){
+    
+    return $f_name;
+}
+
+function full_name($arg1,$arg2=null,$seperator= "-"){
+    
+    
+    if ($arg2===null){
+         
+        return "{$arg1}";
+    }
+    else{
+        return "{$arg1}{$seperator}{$arg2}";
+
+    }
+}
+
+// echo full_name(firtsName('matthew'));
+
+
+
+
+function get_sum(){
+    
+    return array_sum(func_get_args());
+}
+
+
+echo get_sum(3,4,5,6,7,8,9,1);
 
 
 
